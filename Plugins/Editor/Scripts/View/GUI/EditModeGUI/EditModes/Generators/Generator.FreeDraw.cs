@@ -1153,12 +1153,10 @@ namespace RealtimeCSG
 				case EventType.MouseDrag:
 				{
 					clickCount = 0;
-					if (Tools.viewTool != ViewTool.None && Tools.viewTool != ViewTool.Pan)
-						break;
-					if (GUIUtility.hotControl == base.shapeId && Event.current.button == 0)
-					{
-						Event.current.Use();
-					}
+					if (GUIUtility.hotControl != base.shapeId)
+						return;
+
+					Event.current.Use();
 					return;
 				}
 				case EventType.MouseUp:

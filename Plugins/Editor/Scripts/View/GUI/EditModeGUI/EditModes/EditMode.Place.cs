@@ -1843,6 +1843,7 @@ namespace RealtimeCSG
 								hoverOnBoundsEdge != -1)*/
 							{
 								SelectionUtility.DoSelectionClick(sceneView);
+								Event.current.Use();
 							}
 						}
 						mouseIsDragging = false;
