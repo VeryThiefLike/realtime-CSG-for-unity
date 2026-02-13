@@ -48,8 +48,13 @@ namespace RealtimeCSG
 						buttonArea.y += 2;
 						buttonArea.height = 13;
 						buttonArea.width = 13;
+#if UNITY_6000_0_OR_NEWER						
+						if (GUI.Button(buttonArea, GUIContent.none, "ToolbarSearchCancelButton"))
+							EditModeToolWindowSceneGUI.GetWindow();
+#else
 						if (GUI.Button(buttonArea, GUIContent.none, "WinBtnClose"))
 							EditModeToolWindowSceneGUI.GetWindow();
+#endif
 						TooltipUtility.SetToolTip(CSG_GUIStyleUtility.PopOutTooltip, buttonArea);
 
 						int controlID = GUIUtility.GetControlID(SceneViewMeshOverlayHash, FocusType.Keyboard, currentArea);
