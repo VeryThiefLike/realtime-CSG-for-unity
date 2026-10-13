@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public static class GameObjectExtensions
+public static class GameObjectExtensions 
 {
 #if !UNITY_2019_2_OR_NEWER
     public static bool TryGetComponent<T>(this GameObject gameObject, out T component) where T : UnityEngine.Component
